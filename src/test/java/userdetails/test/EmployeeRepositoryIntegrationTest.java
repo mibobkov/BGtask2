@@ -23,7 +23,7 @@ public class EmployeeRepositoryIntegrationTest {
 
     @Test
     public void returnsExistingEmployeeByEmail() {
-        EmployeeEntry alex = new EmployeeEntry("Alex", "Freeman", "19.12.03", "ag@gmail.com");
+        EmployeeEntry alex = new EmployeeEntry("Alex", "Freeman", "19/12/03", "ag@gmail.com");
         employeeRepository.save(alex);
         List<EmployeeEntry> foundEmployees = employeeRepository.findByEmail(alex.getEmail());
         assertThat(foundEmployees.size()).isEqualTo(1);
@@ -33,7 +33,7 @@ public class EmployeeRepositoryIntegrationTest {
 
     @Test
     public void deletesEmployee() {
-        EmployeeEntry alex = new EmployeeEntry("Alex", "Freeman", "19.12.03", "ag@gmail.com");
+        EmployeeEntry alex = new EmployeeEntry("Alex", "Freeman", "19/12/03", "ag@gmail.com");
         employeeRepository.save(alex);
         List<EmployeeEntry> foundEmployees = employeeRepository.findByEmail(alex.getEmail());
         assertThat(foundEmployees.size()).isEqualTo(1);
